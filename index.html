@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Beyond The Top</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body {
+      background: url('image/BG_2.gif') center center no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    @keyframes float-glow {
+      0%, 100% {
+        transform: translateY(0);
+        filter: drop-shadow(0 0 10px rgba(255, 0, 255, 0.4)); /* Màu hồng nhạt */
+      }
+      50% {
+        transform: translateY(-10px);
+        filter: drop-shadow(0 0 25px rgba(255, 0, 255, 0.6)); /* Màu hồng sáng hơn chút */
+      }
+    }
+
+
+    .logo-text {
+      width: 85vw;
+      max-width: 450px;
+      height: auto;
+      animation: float-glow 3s ease-in-out infinite;
+      margin-bottom: 20px;
+      display: none; /* Ẩn lúc đầu */
+    }
+
+    .accept-btn {
+      padding: 12px 28px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(to right, #3b82f6, #60a5fa);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(59, 130, 246, 0.6);
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 10;
+    }
+
+    .accept-btn:hover {
+      background: linear-gradient(to right, #2563eb, #3b82f6);
+      transform: scale(1.05);
+    }
+
+    .message-container {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-top: 20px;
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    .message, .message1 {
+      width: 80vw;
+      max-width: 350px;
+      height: auto;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 768px) {
+      .logo-text {
+        width: 130vw;
+        max-width: none;
+        margin-top: -50px;
+        margin-left: 20%;
+        /* margin-right: auto; */
+        object-fit: contain;
+      }
+
+
+      .accept-btn {
+        font-size: 16px;
+        padding: 10px 24px;
+      }
+
+      .message {
+        width: 40vw;
+        max-width: none;
+      }
+      .message1 {
+        width: 60vw;
+        max-width: none;
+      }
+      .message-container {
+        width: 60vw;
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nút xuất hiện đầu tiên -->
+  <button class="accept-btn" onclick="showMessage()">Accept Now!</button>
+
+  <!-- Hình logo chính -->
+  <img src="image/1-02.png" alt="BEYOND THE TOP" class="logo-text" >
+
+  <!-- Các hình ảnh cảm ơn -->
+  <div class="message-container" id="messageContainer">
+    <img id="thankImage1" class="message" src="image/1-04.png" alt="Đoàn Kết">
+    <img id="thankImage2" class="message1" src="image/1-05.png" alt="Vững Mạnh">
+  </div>
+
+  <script>
+    function showMessage() {
+      document.querySelector(".accept-btn").style.display = "none";
+      document.querySelector(".logo-text").style.display = "block";
+      document.getElementById("messageContainer").style.display = "flex";
+    }
+  </script>
+
+</body>
+</html>

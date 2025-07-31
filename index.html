@@ -21,13 +21,42 @@
     }
 
     body {
-      background: url('image/BG_2.gif') center center no-repeat;
+      background: url('image/1-01.gif') center center no-repeat;
       background-size: cover;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
       text-align: center;
+    }
+    .accept-btn {
+      padding: 25px 100px; /* To hơn nhiều */
+      font-size: 40px; /* Chữ to hơn */
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(to right, #3b82f6, #60a5fa);
+      border: none;
+      border-radius: 40px; /* Bo tròn mềm hơn */
+      cursor: pointer;
+      box-shadow: 0 4px 25px rgba(59, 130, 246, 0.8);
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 10;
+
+      /* Hiệu ứng to nhỏ liên tục */
+      animation: pulse 1.5s infinite;
+    }
+
+    /* Hover vẫn phóng to thêm một chút */
+    .accept-btn:hover {
+      background: linear-gradient(to right, #2563eb, #3b82f6);
+      transform: scale(1.1);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.15); } /* To lên */
+      100% { transform: scale(1); }   /* Thu lại */
     }
 
     @keyframes float-glow {
@@ -102,11 +131,11 @@
       }
 
 
-      .accept-btn {
-        font-size: 16px;
-        padding: 10px 24px;
+    .accept-btn {
+        font-size: 22px;
+        padding: 18px 50px;
+        margin-bottom: 20px;
       }
-
       .message {
         width: 40vw;
         max-width: none;

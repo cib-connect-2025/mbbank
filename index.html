@@ -44,7 +44,7 @@
       z-index: 10;
 
       /* Hiệu ứng to nhỏ liên tục */
-      animation: pulse 1.5s infinite;
+      animation: pulse 4s infinite;
     }
 
     /* Hover vẫn phóng to thêm một chút */
@@ -70,6 +70,20 @@
       }
     }
 
+    .accept-btn {
+      background: transparent; /* Không nền */
+      border: none;            /* Xóa viền */
+      padding: 0;              /* Xóa khoảng trống */
+      cursor: pointer;
+      animation: pulse 1.5s infinite; /* Vẫn giữ hiệu ứng to nhỏ */
+    }
+
+    .accept-btn .btn-image {
+      display: block;
+      width: 200px;   /* Kích thước nút ảnh */
+      height: auto;
+      border-radius: 20px; /* Nếu muốn bo tròn viền ảnh */
+    }
 
     .logo-text {
       width: 85vw;
@@ -81,19 +95,22 @@
     }
 
     .accept-btn {
-      padding: 12px 28px;
-      font-size: 18px;
-      font-weight: bold;
-      color: white;
-      background: linear-gradient(to right, #3b82f6, #60a5fa);
-      border: none;
-      border-radius: 30px;
+      background: transparent; /* Không nền */
+      border: none;            /* Xóa viền */
+      padding: 0;              /* Xóa khoảng trống */
       cursor: pointer;
-      box-shadow: 0 4px 20px rgba(59, 130, 246, 0.6);
-      transition: all 0.3s ease;
       position: relative;
       z-index: 10;
+      animation: pulse 1.5s infinite; /* Hiệu ứng to nhỏ */
     }
+
+    .accept-btn .btn-image {
+      display: block;
+      width: 220px;  /* Kích thước ảnh nút */
+      height: auto;
+      border-radius: 20px; /* Nếu muốn bo tròn */
+    }
+
 
     .accept-btn:hover {
       background: linear-gradient(to right, #2563eb, #3b82f6);
@@ -131,10 +148,19 @@
       }
 
 
-    .accept-btn {
-        font-size: 22px;
-        padding: 18px 50px;
-        margin-bottom: 20px;
+        /* Nút bấm là hình ảnh, căn giữa và thu gọn khoảng trống */
+      .accept-btn {
+        padding: 0;             /* Không padding thừa */
+        margin-bottom: 20px;    /* Khoảng cách với logo */
+        display: flex;
+        justify-content: center;
+        /* Hiệu ứng to nhỏ liên tục */
+        animation: pulse 4s infinite;
+      }
+
+      .accept-btn .btn-image {
+        width: 240px;           /* Nút nhỏ vừa tay trên mobile */
+        height: auto;
       }
       .message {
         width: 40vw;
@@ -154,7 +180,9 @@
 <body>
 
   <!-- Nút xuất hiện đầu tiên -->
-  <button class="accept-btn" onclick="showMessage()">Accept Now!</button>
+  <button class="accept-btn" onclick="showMessage()">
+      <img src="image/1-06.png" alt="Accept Now" class="btn-image">
+  </button>
 
   <!-- Hình logo chính -->
   <img src="image/1-02.png" alt="BEYOND THE TOP" class="logo-text" >
